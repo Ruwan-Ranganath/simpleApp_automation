@@ -1,2 +1,21 @@
 ---
-# tasks file for install-chocolatary
+- name: "Chocolatey"
+  hosts: windows
+  tasks:
+    - name: Install chocolatey
+      win_chocolatey:
+          name:
+           - chocolatey
+           - chocolatey-core.extension
+          state: present
+    - name: Install Git 
+      win_chocolatey:
+          name: git
+          state: present
+          ignore_checksums: yes
+    - name: Ensure openssh installed
+      win_chocolatey:
+        name: openssh
+        state: present
+        version: 8.0.0.1
+        source: http://internal/odata/repo

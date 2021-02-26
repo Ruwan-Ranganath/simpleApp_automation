@@ -1,2 +1,14 @@
 ---
-# tasks file for configure-git
+- name: Install git
+  win_chocolatey:
+    name: git
+    state: present
+
+- name: "Chocolatey Google Chrome"
+  hosts: windows
+  tasks:
+    - name: Install Git 
+      win_chocolatey:
+          name: git
+          state: present
+          ignore_checksums: yes
