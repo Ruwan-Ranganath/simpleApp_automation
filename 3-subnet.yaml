@@ -1,0 +1,6 @@
+- name: Add subnet
+    azure_rm_subnet:
+    resource_group: rg-cs-ansible
+    name: snet-cs-web
+    address_prefix: "10.0.1.0/24"
+    virtual_network: vnet-cs-web

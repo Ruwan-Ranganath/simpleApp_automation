@@ -1,0 +1,8 @@
+[all]
+13.72.96.91
+
+[all:vars]
+ansible_ssh_user=azureuser
+ansible_ssh_pass=Ruwan@@123!!
+ansible_connection=winrm
+ansible_winrm_server_cert_validation=ignore

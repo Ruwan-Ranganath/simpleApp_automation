@@ -1,0 +1,11 @@
+- name: Create a network interface
+    azure_rm_networkinterface:
+    name: nic-cs-web
+    resource_group: rg-cs-ansible
+    virtual_network: vnet-cs-web
+    subnet_name: snet-cs-web
+    security_group: nsg-cs-web
+    ip_configurations:
+        - name: default
+        public_ip_address_name: pip-cs-web
+        primary: True

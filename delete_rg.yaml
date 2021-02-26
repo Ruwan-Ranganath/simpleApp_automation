@@ -1,0 +1,14 @@
+---
+
+- hosts: localhost
+  vars_prompt:
+    - name: rg_name
+      prompt: "Enter resource group name"
+  tasks:
+    - name: Deleting resource group - "{{ name }}"
+      azure_rm_resourcegroup:
+        name: "{{ rg_name }}"
+        state: absent
+      register: rg
+    - debug:
+        var: rg
